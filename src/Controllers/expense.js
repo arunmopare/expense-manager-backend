@@ -3,9 +3,6 @@ const ExpenseModel = require("../Models/expense");
 exports.createExpense = async (req, res) => {
   const Expense = new ExpenseModel(req.body);
   try {
-    console.log('====================================');
-    console.log("Got Hit");
-    console.log('====================================');
     const saveData = await Expense.save();
     if (!saveData) {
       return res.status(400).json({
